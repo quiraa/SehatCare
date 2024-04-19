@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.news.DetailNewsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/news_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/detail_news"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="?colorOnSurface" />
+
+        <ImageView
+            android:id="@+id/news_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="16:10"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/news_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_toolbar"
+            tools:src="@tools:sample/backgrounds/scenic"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/news_text_title"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_image"
+            tools:text="@tools:sample/lorem[10]" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/news_text_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            app:drawableTint="?colorOnSurface"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="@dimen/_8sdp"
+            android:gravity="center|start"
+            tools:text="Nama Penulis Dua Baris"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@id/news_text_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/news_text_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            app:drawableTint="?colorOnSurface"
+            android:drawableStart="@drawable/ic_date"
+            android:drawablePadding="@dimen/_8sdp"
+            android:gravity="center|start"
+            tools:text="Tanggal"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_text_author"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            android:layout_marginVertical="@dimen/_8sdp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/news_text_description"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_text_date"
+            android:layout_marginTop="@dimen/_14sdp"
+            tools:text="@tools:sample/lorem[20]" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/news_text_content"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_text_description"
+            tools:text="@tools:sample/lorem[40]" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/read_more_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/news_text_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/btn_read_more"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            style="@style/Widget.Material3.Button.TextButton"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
